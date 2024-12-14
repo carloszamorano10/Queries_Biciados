@@ -23,12 +23,15 @@ body{
 }
 
 .nav{
-    padding: 15px;
     grid-area: nav;
+    padding: 15px;
     background-color: #3d405b;
     color: antiquewhite;
     justify-content: space-around;
     align-items: center;
+    ul{
+        display: none;
+    }
 }
 .logo-head{
     i{
@@ -37,8 +40,8 @@ body{
     }
 }
 .filtro{
-    padding: 10px;
     grid-area: section;
+    padding: 10px;
     background-color: #e07a5f;
     flex-direction: column;
     align-items: center;
@@ -79,9 +82,14 @@ main{
 }
 
 .paginado{
+    
     margin: 15px;
     a{
         text-decoration: none;
+    }
+    a:hover{
+        background-color: #3d405b;
+        color: antiquewhite;
     }
     .numero-paginado{
         border: 1px solid rgba(172, 153, 153, 0.623);
@@ -90,6 +98,7 @@ main{
         margin: 2px;
     }
 }
+
 
 footer{
    grid-area: footer;
@@ -114,4 +123,41 @@ footer{
     "main"
     "footer"
     ;
+    grid-template-columns: 1fr;
+    height: 100vh;
+}
+
+@media (width >= 576px){
+    .grid-cont{
+        grid-template-areas:
+        "nav section"
+        "nav main"
+        "footer main"
+        ;
+        grid-template-columns: 1fr 4fr;
+    }
+    
+    main{
+     grid-template-columns: 1fr 1fr 1fr;
+    } 
+    .logo-head{
+        padding-top: 20px;
+    }
+    .nav{
+        flex-direction: column;
+        justify-content: start;
+       .fa-bars{
+        display: none
+       }
+        align-items: start;
+        ul{
+            display: block;
+            padding-left: 70px;
+            padding-top: 40px;
+        }
+        ul li{  
+         list-style-type: none;
+            }
+        
+    }
 }
