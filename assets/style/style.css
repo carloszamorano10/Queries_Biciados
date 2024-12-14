@@ -10,17 +10,21 @@ body{
     font-family: "Schibsted Grotesk", "sans-serif";
 }
 
-.nav, .filtro, main, .logo-head, footer, .card, .logos-rrss{
+.nav, .filtro, .logo-head, footer, .card, .logos-rrss{
     display: flex;   
 }
 
 .titulo{
-    font-family: "Rubik Dirt";
-    font-weight: 400;
+    font-size: 25px;
+}
+.fa-bicycle{
+    margin: 5px;
 }
 
 .nav{
-    background-color: #f4f1de;
+    grid-area: nav;
+    background-color: #3d405b;
+    color: antiquewhite;
     justify-content: space-around;
     align-items: center;
 }
@@ -31,6 +35,7 @@ body{
     }
 }
 .filtro{
+    grid-area: section;
     background-color: #e07a5f;
     flex-direction: column;
     align-items: center;
@@ -40,6 +45,10 @@ body{
 }
 
 main{
+    grid-area: main;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
     background-color: #f4f1de;
     flex-direction: column;
     align-items: center;
@@ -73,10 +82,12 @@ main{
     .numero-paginado{
         border: 1px solid rgba(172, 153, 153, 0.623);
         padding: 4px;
+        margin: 2px;
     }
 }
 
 footer{
+   grid-area: footer;
    flex-direction: column;
    align-items: center;
    background-color: #3d405b;
@@ -86,4 +97,18 @@ footer{
 .logos-rrss{
  width:35%;
  justify-content: space-evenly;
+}
+
+
+.grid-cont{
+    display: grid;
+    grid-template-areas: 
+    "nav"
+    "section"
+    "main"
+    "footer"
+    ;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 1f 4fr 1fr;
+
 }
